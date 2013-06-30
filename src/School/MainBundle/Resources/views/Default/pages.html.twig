@@ -1,0 +1,40 @@
+{% extends "SchoolMainBundle:Default:layout.html.twig" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block meta %}{{ page.meta }}{% endblock %}
+{% block descr %}{{ page.descr }}{% endblock %}
+
+{% block content %}
+<ul id="pCarousel" class="jcarousel-skin-tango">
+	{% for item in listContent %}
+ 			<li>
+	 			<div style="width: 980px; position: relative;">
+					<div class="image">
+			 			<img src="{{ asset('bundles/school/images/posters/') }}{{ item.photo }}" width="980">
+			 		</div>
+			 		<div class="text" style="height: {{ item.height }}px; width: {{ item.width }}px;top:{{ item.top }}px; left: {{ item.left }}px;">
+			 			<h2>{{ item.title }}</h2>
+			 			<article>
+			 				{{ item.text | raw }}
+						</article>
+			 		</div>
+			 	</div>
+ 			</li>
+	{% endfor %}
+	 	</ul>
+ 	</section>
+ 	<section class="item-menu">
+ 		<div class="items">
+ 			<ul id="tCarousel" class="jcarousel-skin-tango">
+ 			{% for item in bottom %}
+		 			<li {% if page.realUrl == item.url %}class="active"{% endif %}>
+	 				<a href="{{ path('pages_second', {'first': firstPage.url, 'second': item.url }) }}">
+		 				<div class="item-image">
+		 					<img src="{{ asset('bundles/school/images/bottom/') }}{{ item.photo }}" width="228" height="130">
+		 				</div>
+		 				<div class="item-text">{{ item.title }}</div>
+	 				</a>
+	 			</li>
+			{% endfor %}
+ 			</ul>
+ 		</div>
+{% endblock %} 

@@ -1,0 +1,7 @@
+parameters:
+#    school_main.example.class: School\MainBundle\Example
+
+services:
+#    school_main.example:
+#        class: %school_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

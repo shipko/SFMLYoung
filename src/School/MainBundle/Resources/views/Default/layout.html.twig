@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>{% block title %}Главная{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="{{ asset('bundles/school/css/main.css') }}">
+  <!--[if lt IE 9]> 
+   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+  <![endif]-->
+  <script type="text/javascript" src="{{ asset('bundles/school/js/jquery.jcarousel.min.js') }}"></script>
+  <script type="text/javascript">
+
+	$(document).ready(function() {
+	    function mycarousel_initCallback(carousel)
+      {
+          // Disable autoscrolling if the user clicks the prev or next button.
+          carousel.buttonNext.bind('click', function() {
+              carousel.startAuto(0);
+          });
+
+          carousel.buttonPrev.bind('click', function() {
+              carousel.startAuto(0);
+          });
+
+          // Pause autoscrolling if the user moves with the cursor over the clip.
+          carousel.clip.hover(function() {
+              carousel.stopAuto();
+          }, function() {
+              carousel.startAuto();
+          });
+      };
+      $('#tCarousel').jcarousel();
+      
+      $('#pCarousel').jcarousel({ scroll: 1, auto: 15, wrap: 'last', initCallback: mycarousel_initCallback }); 
+	});
+
+	</script>
+ </head>
+ <body>
+ 	<header>
+ 			<div class="images">
+ 				<a href="{{ path('school_main_homepage') }}">
+          <img src="{{ asset('bundles/school/images/logo.png') }}"  height="40">
+ 			  </a>
+      </div>
+ 			<nav class="menu">
+ 				<ul>
+	 				<li><a href="{{ path('pages', {'first': 'about' }) }}">О лицее</a></li>
+          <li><a href="{{ path('teachers_default') }}">Педагоги</a></li>
+          <li><a href="{{ path('pages', {'first': 'parents' }) }}">Родителям</a></li>
+	 				<li><a href="{{ path('pages', {'first': 'pupils' }) }}">Ученику</a></li>
+ 				</ul>
+ 			</nav>
+ 	</header> 	
+ 	<section class="content">
+ 	{% block content %}
+	
+	{% endblock %} 		
+ 	</section>
+ 	<footer>
+ 		© sfml.tom.ru 2012 | <a href="http://vk.com/mukovkin">Муковкин Дмитрий</a>
+ 	</footer>
+ </body>
+</html>

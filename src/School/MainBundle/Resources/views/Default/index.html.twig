@@ -1,0 +1,54 @@
+{% extends "SchoolMainBundle:Default:layout.html.twig" %}
+
+{% block content %}
+	
+	
+<div class="image">
+ 			<img src="{{ asset('bundles/school/images/berd.jpg') }}">
+ 		</div>
+ 		<div class="text" style="max-width: 350px; top:80px;left: 40px;">
+ 			<h2>Добро пожаловать</h2>
+ 			<article>
+ 				Поздравляем Бердникову Валентину Григорьевну, учителя русского языка и литературы, с присвоением звания "Заслуженный учитель Российской Федерации". 
+"Это не просто учитель, это человек, который всего себя отдаёт для светлого и надёжного будущего своих учеников". 
+			</article>
+ 		</div>
+ 	</section>
+ 	<section class="item-menu">
+ 		<div class="items">
+ 			<ul id="tCarousel" class="jcarousel-skin-tango">
+	 			<li>
+	 				<a href="{{ path('teachers', {'id': 'all' }) }}">
+		 				<div class="item-image">
+		 					<img src="./images/teach.jpg" width="228" height="130">
+		 				</div>
+		 				<div class="item-text">Педагогический состав</div>
+	 				</a>
+	 			</li>
+	 			<li>
+	 				<a href="fmh.html">
+		 				<div class="item-image">
+		 					<img src="http://sfml.tom.ru/tests/template/images/logo_new1.png" width="130" height="130">
+		 				</div>
+		 				<div class="item-text">Дополнительное образование</div>
+	 				</a>
+	 			</li>
+	 			<li>
+	 				<a href="fmh.html">
+		 				<div class="item-image">
+		 					<img src="http://sfml.tom.ru/images/pevez1.JPG" width="243" height="130">
+		 				</div>
+		 				<div class="item-text">Внеурочная деятельность</div>
+	 				</a>
+	 			</li>
+	 			<li>
+	 				<a href="fmh.html">
+		 				<div class="item-image">
+		 					<img src="http://cs5195.userapi.com/u11190388/149550909/m_d93b2339.jpg" width="228" height="130">
+		 				</div>
+		 				<div class="item-text">Инновации</div>
+	 				</a>
+	 			</li>
+ 			</ul>
+ 		</div>
+{% endblock %} 

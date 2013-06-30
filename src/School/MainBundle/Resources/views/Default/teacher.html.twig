@@ -1,0 +1,32 @@
+{% extends "SchoolMainBundle:Default:layout.html.twig" %}
+{% block title %}Учитель | {{ array.name }}  {{ array.surname }}{% endblock %}
+{% block content %}
+  
+<div class="image">
+      <img src="{{ asset('bundles/school/images/teachers/') }}{{ array.bigPhoto }}" width="980" >
+    </div>
+    <div class="text" style="height: 350px; max-width: 500px;top:50px;right: 50px;">
+      <h2>{{ array.name }} {{ array.surname }}</h2>
+      <h3>{% if array.type == 1 %}Учитель начальных классов{% else %}Учитель старших классов {% endif %}</h3>
+      <article>
+          {{ array.about | raw }}
+      </article>
+    </div>
+  </section>
+  <section class="item-menu">
+    <div class="items">
+      <ul id="tCarousel" class="jcarousel-skin-tango">
+        {% for item in teachers %}
+        <li>
+          <a href="{{ path('teachers', {'id': item.href }) }}">
+            <div class="item-image">
+              <img src="{{ asset('bundles/school/images/teachers/') }}{{ item.smallPhoto }}" height="130">
+            </div>
+            <div class="item-text">{{ item.surname }} {{ item.name }}</div>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+{% endblock %} 

@@ -1,0 +1,19 @@
+school_main_homepage:
+    pattern:  /
+    defaults: { _controller: SchoolMainBundle:Default:index }
+
+pages:
+    pattern:  /page/{first}
+    defaults: { _controller: SchoolMainBundle:Pages:index }
+
+pages_second:
+    pattern:  /page/{first}/{second}
+    defaults: { _controller: SchoolMainBundle:Pages:second }
+
+teachers:
+    pattern:  /teacher/{id}
+    defaults: { _controller: SchoolMainBundle:Teacher:index, id: 'all' }
+
+teachers_default:
+    pattern:  /teacher/
+    defaults: { _controller: SchoolMainBundle:Teacher:index, id: 'all' }

@@ -1,0 +1,21 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: school
+    database_user: mukovkin
+    database_password: mukovkin
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: en
+    secret: 1100af2aad6e5b21354f49a72cc82a2814c8624a
+    database_path: web
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     127.0.0.1
+        dbname:   school
+        user:     mukovkin
+        password: mukovkin
